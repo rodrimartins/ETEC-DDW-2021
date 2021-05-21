@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalhando com formulários</title>
+
+    <script>
+      function validar(){
+
+        //var nome = document.getElementById("nome").value;
+        var nome = document.cadastro.nome.value;
+        if (nome==""){
+          alert("O campo nome está vazio");
+        }
+
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <h1>CADASTRO DE ALUNOS</h1>
+
+    <form
+     name="cadastro" 
+     action="cadastro.php" 
+     method="POST"
+     oninput="resultado.value = valor1.valueAsNumber * valor2.valueAsNumber">
+      <p>
+        <label for="nome">Nome:</label>
+        <input
+          type="text"
+          name="txtNome"
+          id="nome"
+          size="50"
+          placeholder="Digite seu nome"
+          maxlength="60"
+          autofocus
+          
+        />
+        <span style="color: red">*</span>
+      </p>
+      <p>
+        <label for="senha">Senha:</label>
+        <input
+          type="password"
+          name="txtSenha"
+          id="senha"
+          placeholder="Digite sua senha"
+          maxlength="10"
+          required
+        />
+        <span style="color: red">*</span>
+      </p>
+
+      <p>
+        <label for="telefone">Telefone Residencial</label>
+        <input
+          type="tel"
+          name="txtTelefone"
+          id="telefone"
+          placeholder="(XX)XXXX-XXXX"
+          maxlength="13"
+        />
+      </p>
+
+      <p>
+        <label for="telefone">Telefone Comercial</label>
+        <input
+          type="tel"
+          name="txtTelefone"
+          id="telefone"
+          placeholder="(XX)XXXX-XXXX"
+          maxlength="13"
+        />
+      </p>
+
+      <p>
+        <label for="telefone">Telefone Celular</label>
+        <input
+          type="tel"
+          name="txtTelefone"
+          id="telefone"
+          placeholder="(XX)XXXXX-XXXX"
+          maxlength="14"
+          required
+        />
+        <span style="color: red">*</span>
+      </p>
+
+      <p>
+        <label for="email">E-mail</label>
+        <input
+          type="text"
+          name="txtEmail"
+          id="email"
+          placeholder="email@email.com"
+          pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$"
+        />
+      </p>
+
+      <p>
+        <label for="site">Digite seu site</label>
+        <input
+          type="url"
+          name="txtSite"
+          id="site"
+          placeholder="http://site.com"
+        />
+      </p>
+
+      <p>
+        <label for="idade">Idade</label>
+        <input type="number" name="txtIdade" id="idade" min="1" max="120" />
+      </p>
+
+      <p>
+        <label for="nivel">Satistação com a escola</label>
+        <input
+          type="range"
+          name="txtNivel"
+          id="nivel"
+          min="0"
+          max="100"
+          step="10"
+        />
+      </p>
+
+      <p>
+        <label for="data">Data Cadastro</label>
+        <input type="date" name="txtData" id="data" />
+      </p>
+
+      <p>
+        <label for="mes">Mês do Cadastro</label>
+        <input type="month" name="txtMes" id="mes">
+
+      </p>
+
+      <p>
+        <label for="semana">Semana do Cadastro</label>
+        <input type="week" name="txtSemana" id="semana">
+
+      </p>
+
+      <p>
+        <label for="hora">Hora do Cadastro</label>
+        <input type="time" name="txtHora" id="hora">
+
+      </p>
+
+      <p>
+        <label for="nasc">Data de Nascimento</label>
+        <input type="datetime-local" name="txtNasc" id="nasc">
+
+      </p>
+
+      <p>
+        <label for="tempo">Tempo de entrega documentos</label>
+        <input type="time" name="txtTempo" id="tempo" min="10:00" max="14:00" step="300">
+        
+
+      </p>
+
+      <p>
+        <input type="file" name="imagem">
+      </p>
+
+      <p>
+        <fieldset>
+          <legend>Estado Civil:</legend>
+          <input type="radio" name="estadoCivil" value="casado">Casado
+          <input type="radio" name="estadoCivil" value="solteiro">Solteiro
+          <input type="radio" name="estadoCivil" value="divorciado">Divorciado
+        </fieldset>
+
+      </p>
+
+      <p>
+        <fieldset>
+          <legend>Produtos:</legend>
+          <input type="checkbox" name="computador" value="computador">Computador
+          <input type="checkbox" name="impressora" value="impressora">Impressora
+          <input type="checkbox" name="monitor" value="monitor">Monitor
+        </fieldset>
+
+      </p>
+
+      <p>
+        <label for="pesquisa">O que você procura?</label>
+        <input type="search" name="txtPesquisa" id="pesquisa">
+      </p>
+
+      <label>Deixe sua sugestão:</label>
+      <p>
+      
+        <textarea name="txtMsg" id="msg" cols="50" rows="20"></textarea>
+      </p>
+
+      <p>
+        <label for="cor">Selecione a cor do Texto:</label>
+        <input type="color" name="txtCor" id="cor">
+      </p>
+
+      <p>
+        <label for="site">Selecione o site:</label>
+        <input type="url" name="link" id="site" list="sites">
+      </p>
+      <datalist id="sites">
+
+        <option label="uol" value="http://www.uol.com.br">
+        </option>
+        <option label="globo" value="http://globo.com">
+        </option>
+      </datalist>
+
+      <p>
+        <label for="calculo">Multiplicação de dois valores:</label>
+        <input type="number" name="valor1"> *
+        <input type="number" name="valor2"> =
+        <output name="resultado"> </output>
+
+      </p>
+
+
+      <p>
+        <label for="uf">Selecione Estado:</label>
+        <select size="10">
+          <option value="sp">SP</option>
+          <option value="rj">RJ</option>
+          <option value="mg">MG</option>
+          <option value="es">ES</option>
+          <option value="ce">CE</option>
+        </select>
+      </p>
+
+
+      <input type="hidden" name="cadastro" value="cadastroAlunos">
+      <p style="color: red">* campos obrigatórios</p>
+      <p>
+        <button type="submit">ENVIAR</button>
+        <button type="reset">LIMPAR</button>
+        <button type="button" onclick="validar();">VALIDAR NOME</button>
+
+      </p>
+    </form>
+  </body>
+</html>
